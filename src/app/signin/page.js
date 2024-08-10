@@ -44,7 +44,7 @@ const Signin = () => {
           <Stack spacing={{ base: '2', md: '3' }} textAlign="center">
             <Heading size={{ base: 'xl', xl: 'md' }}>Log in to your account</Heading>
             <Text color="fg.muted">
-              Don't have an account? <Link href="/signup" ><ChakraLink color='#319795'>Sign up</ChakraLink></Link>
+              Dont have an account? <Link href="/signup" ><ChakraLink color='#319795'>Sign up</ChakraLink></Link>
             </Text>
           </Stack>
         </Stack>
