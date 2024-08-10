@@ -17,7 +17,7 @@ import { redirect } from 'next/navigation'
 
 const fetchAllPosts = async () => {
 	const collectionRef = collection(db, 'posts');
-	const q = query(collectionRef, orderBy('title'));
+	const q = query(collectionRef, orderBy('createdDate', 'desc'));
 	const postCollectionSnapshot = await getDocs(q);
 	const posts = postCollectionSnapshot.docs.map(doc => ({
 		...doc.data(),
