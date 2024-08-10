@@ -10,13 +10,6 @@ export default async function Home() {
 		...doc.data(),
 		id: doc.id,
 	}));
-	const userDocRef = doc(db, 'users', 'PIjIHCZNNrVAnJHjrnz7VCHGROw2');
-	const userDocSnap = await getDoc(userDocRef);
-	if (userDocSnap.exists()) {
-		console.log('User data', userDocSnap.data());
-	} else {
-		console.log('no user data ')
-	}
 
 	return <PostsList postList={posts} />;
 }
