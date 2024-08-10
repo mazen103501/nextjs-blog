@@ -18,7 +18,7 @@ export function AuthProvider({ children }) {
 export const useAuth = () => useContext(AuthContext);
 
 function useProvideAuth() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(localStorage.getItem('user'));
 
   const signup = (email, password) => createUserWithEmailAndPassword(auth, email, password);
   const signin = (email, password) => signInWithEmailAndPassword(auth, email, password);

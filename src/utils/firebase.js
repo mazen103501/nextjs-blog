@@ -33,7 +33,7 @@ const addPost = async formData => {
 	const docRef = await addDoc(collectionRef, {
 		title: formData.get('title'),
 		content: formData.get('content'),
-		tags: formData.get('tags').split(' ').map(tag => tag.trim()),
+		tags: formData.get('tags').split(',').map(tag => tag.trim()),
 		userId: formData.get('userId'),
 		email: formData.get('email'),
 		createdDate: serverTimestamp()
