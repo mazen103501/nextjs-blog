@@ -8,8 +8,22 @@ import {
 	serverTimestamp,
 	updateDoc,
 	getDoc,
+	query,
+	orderBy,
+	getDocs,
 } from 'firebase/firestore'
 import { redirect } from 'next/navigation'
+
+const fetchAllPosts = async () => {
+	const collectionRef = collection(db, 'posts');
+	const q = query(collectionRef, orderBy('title'));
+	const postCollectionSnapshot = await getDocs(q);
+	const posts = postCollectionSnapshot.docs.map(doc => ({
+		...doc.data(),
+		id: doc.id,
+	}));
+	return posts;
+}
 
 const addPost = async formData => {
 	const collectionRef = collection(db, 'posts');
@@ -62,4 +76,4 @@ const deletePost = async postId => {
 	redirect('/')
 };
 
-export { addPost, fetchPost, updatePost, deletePost }
+export { fetchAllPosts, addPost, fetchPost, updatePost, deletePost }
