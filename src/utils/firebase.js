@@ -12,6 +12,7 @@ import {
 	orderBy,
 	getDocs,
 } from 'firebase/firestore'
+import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 
 const fetchAllPosts = async () => {
@@ -22,6 +23,7 @@ const fetchAllPosts = async () => {
 		...doc.data(),
 		id: doc.id,
 	}));
+	revalidatePath('/');
 	return posts;
 }
 
