@@ -1,4 +1,7 @@
 **Note:** This app is deployed, so you don't have to run it locally. You can access it [here](https://nextjs-blog-bay-one-10.vercel.app/).
+and i k
+
+**Note:**  For the sake of simplicity in running the project locally, the Firebase configuration is currently stored in the config file. However, it is recommended to move these sensitive details to environment variables for enhanced security and flexibility.
 
 ## Overview
 This document outlines the architecture of a blogging platform built with Next.js, Firebase, and Chakra UI. The platform allows users to create, read, update, and delete blog posts. It includes user authentication and post management.
